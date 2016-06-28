@@ -1,0 +1,18 @@
+<h1>TODO List</h1>
+
+<div ng-controller="TodoController as rrt" data-ng-init="init()">
+Enter ToDo {{name}}
+  <form name="my" ng-submit="addEntry(name)" novalidate>
+    <input type="text" name="name1" ng-model="name" required>
+                   
+    <input type="submit" value="Add">
+       <span ng-show="my.name1.$invalid && my.name1.$touched" style="color: red">Name Required.</span>
+  </form>
+  <ul>
+    <li ng-repeat="entry in entries track by $index">
+       {{entry.name}} 
+      <a href="" ng-show="entry.id"  class="winner" ng-click="removeEntry(entry.id)">Delete</a>
+
+     </li>
+  </ul>
+</div>
